@@ -1,5 +1,5 @@
 <?php
-// the router takes the requested URL (or route) and decides what to do with it
+// the router takes the requested URL (or route) and decides what to do with it (Controller)
 
 class Router
 {
@@ -47,13 +47,21 @@ class Router
 	 */
 	public function match($url)
 	{
-		foreach ($this->routes as $route => $params)
+		$reg_exp = "/^(?P<controller>[a-z-]+)\/(?P<action>[a-z-]+)$/";
+		if (preg_match($reg_exp, $url, $matches))
 		{
-			if ($url === $route)
+			$params = [];
+
+			foreach ($matches as $key => $value)
 			{
-				$this->params = $params;
-				return true;
+				if (is_string($key))
+				{
+					$params[$key] = $value;
+				}
 			}
+
+			$this->params = $params;
+			return true;
 		}
 		return false;
 	}
