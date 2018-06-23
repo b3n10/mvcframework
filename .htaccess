@@ -1,6 +1,5 @@
 # https://stackoverflow.com/a/23638209/6353682
 RewriteEngine On
-RewriteBase /framework/
 
 RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
 RewriteRule ^ %1 [L,NE,R=302]
