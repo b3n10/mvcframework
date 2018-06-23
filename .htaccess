@@ -1,7 +1,10 @@
-# https://stackoverflow.com/a/23638209/6353682
 RewriteEngine On
 
-RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
-RewriteRule ^ %1 [L,NE,R=302]
+# base URL
+# change to only / for heroku
+RewriteBase /
 
-RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^(.*)$ public/index.php?$1 [L,QSA]

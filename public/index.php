@@ -1,3 +1,3 @@
 <?php
 
-echo 'auto deploy';
+echo 'Requested URL: ' . $_SERVER['QUERY_STRING'];
