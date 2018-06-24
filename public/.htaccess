@@ -4,7 +4,11 @@ RewriteEngine On
 # change to only / for heroku because Procfile uses public/ as document root
 # e.g. Procfile:
 # web: vendor/bin/heroku-php-apache2 public/
+<<<<<<< HEAD
 RewriteBase /
+=======
+RewriteBase /framework/public
+>>>>>>> development
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
