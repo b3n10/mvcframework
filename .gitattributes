@@ -1,2 +1,3 @@
 public/.htaccess merge=dev
-.htaccess
+progress merge=dev
+custom-config.conf merge=dev
