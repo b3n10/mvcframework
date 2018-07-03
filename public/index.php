@@ -2,6 +2,7 @@
 // main entry point of app
 
 require '../Core/Router.php';
+require '../App/Controllers/Posts.php';
 
 $router = new Router();
 
@@ -19,5 +20,4 @@ $router->add('{controller}/{id:\d+}/{action}');
 
 $url = $_SERVER['QUERY_STRING'];
 
-$router->match($url);
-$router->getParams();
+$router->dispatch($url);
