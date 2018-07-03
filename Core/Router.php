@@ -1,6 +1,8 @@
 <?php
 // the router takes the requested URL (or route) and decides what to do with it (Controller)
 
+namespace Core;
+
 class Router
 {
 	/**
@@ -59,10 +61,19 @@ class Router
 	 */
 	public function match($url)
 	{
-		foreach ($this->routes as $route => $params) {
-			if (preg_match($route, $url, $matches)) {
-				foreach ($matches as $key => $value) {
-					if (is_string($key)) {
+		// get all regex from routing table
+		foreach ($this->routes as $route => $params)
+		{
+			// check if url matches regex
+			if (preg_match($route, $url, $matches))
+			{
+				// e.g. $matches:
+				// [controller] => url1
+				// [action] => url2
+				foreach ($matches as $key => $value)
+				{
+					if (is_string($key))
+					{
 						$params[$key] = $value;
 					}
 				}
@@ -70,7 +81,6 @@ class Router
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -82,5 +92,69 @@ class Router
 	public function getParams()
 	{
 		return $this->params;
+	}
+
+	public function dispatch($url)
+	{
+		$url = $this->removeQSVar($url);
+
+		if ($this->match($url))
+		{
+			// include the namespace of the class
+			$controller = "App\Controllers\\" . $this->convertToStudlyCaps($this->params['controller']);
+
+			// if class is already required
+			if (class_exists($controller))
+			{
+				$controller_obj = new $controller($this->params);
+				$action = $this->convertToCamelCase($this->params['action']);
+
+				if (is_callable([$controller_obj, $action]))
+				{
+					$controller_obj->$action();
+				}
+				else
+				{
+					echo "Method $action not found in $controller class!";
+				}
+			}
+			else
+			{
+				echo "$controller class doesn't exists";
+			}
+		}
+		else
+		{
+			echo 'No route matched!';
+		}
+	}
+
+	public function convertToStudlyCaps($class)
+	{
+		return str_replace('-', '', ucwords($class, '-'));
+	}
+
+	public function convertToCamelCase($action)
+	{
+		return str_replace('-', '', lcfirst($action));
+	}
+
+	protected function removeQSVar($url)
+	{
+		if ($url != '')
+		{
+			$parts = explode('&', $url, 2);
+
+			if (!strpos($parts[0], '='))
+			{
+				$url = $parts[0];
+			}
+			else
+			{
+				$url = '';
+			}
+		}
+
+		return $url;
 	}
 }
