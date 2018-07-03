@@ -1,10 +1,18 @@
 <?php
 // main entry point of app
 
-require '../Core/Router.php';
-require '../App/Controllers/Posts.php';
+spl_autoload_register(function($class){
+	// parent dir
+	$root = dirname(__DIR__);
+	// full path + filename
+	$file = $root . '/' . str_replace('\\', '/', $class) . '.php';
 
-$router = new Router();
+	if (is_readable($file)) {
+		require_once $file;
+	}
+});
+
+$router = new Core\Router();
 
 $router->add('', [
 	'controller'	=>	'Home',
