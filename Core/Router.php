@@ -1,6 +1,8 @@
 <?php
 // the router takes the requested URL (or route) and decides what to do with it (Controller)
 
+namespace Core;
+
 class Router
 {
 	/**
@@ -96,12 +98,13 @@ class Router
 	{
 		if ($this->match($url))
 		{
-			$controller = $this->params['controller'];
-			$controller = $this->convertToStudlyCaps($controller);
+			// include the namespace of the class
+			$controller = "App\Controllers\\" . $this->convertToStudlyCaps($this->params['controller']);
 
+			// if class is already required
 			if (class_exists($controller))
 			{
-				$controller_obj = new $controller();
+				$controller_obj = new $controller;
 				$action = $this->convertToCamelCase($this->params['action']);
 
 				if (is_callable([$controller_obj, $action]))
