@@ -101,7 +101,7 @@ class Router
 		if ($this->match($url))
 		{
 			// include the namespace of the class
-			$controller = "App\Controllers\\" . $this->convertToStudlyCaps($this->params['controller']);
+			$controller = $this->getNamespace() . $this->convertToStudlyCaps($this->params['controller']);
 
 			// if class is already required
 			if (class_exists($controller))
@@ -157,4 +157,17 @@ class Router
 
 		return $url;
 	}
+
+	protected function getNamespace()
+	{
+		$namespace = 'App\Controllers\\';
+
+		// if 'namespace' key is in params array
+		if (array_key_exists('namespace', $this->params))
+		{
+			$namespace .= $this->params['namespace'] . '\\';
+		}
+		return $namespace;
+	}
+
 }
