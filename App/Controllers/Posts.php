@@ -1,10 +1,12 @@
 <?php
 
+namespace App\Controllers;
+
 class Posts
 {
 	public function new()
 	{
-		echo 'hi new posts';
+		echo 'Hi from new method of Posts';
 	}
 }
 
