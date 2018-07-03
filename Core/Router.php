@@ -59,10 +59,19 @@ class Router
 	 */
 	public function match($url)
 	{
-		foreach ($this->routes as $route => $params) {
-			if (preg_match($route, $url, $matches)) {
-				foreach ($matches as $key => $value) {
-					if (is_string($key)) {
+		// get all regex from routing table
+		foreach ($this->routes as $route => $params)
+		{
+			// check if url matches regex
+			if (preg_match($route, $url, $matches))
+			{
+				// e.g. $matches:
+				// [controller] => url1
+				// [action] => url2
+				foreach ($matches as $key => $value)
+				{
+					if (is_string($key))
+					{
 						$params[$key] = $value;
 					}
 				}
@@ -70,7 +79,6 @@ class Router
 				return true;
 			}
 		}
-
 		return false;
 	}
 
@@ -82,5 +90,47 @@ class Router
 	public function getParams()
 	{
 		return $this->params;
+	}
+
+	public function dispatch($url)
+	{
+		if ($this->match($url))
+		{
+			$controller = $this->params['controller'];
+			$controller = $this->convertToStudlyCaps($controller);
+
+			if (class_exists($controller))
+			{
+				$controller_obj = new $controller();
+				$action = $this->params['action'];
+
+				if (is_callable([$controller_obj, $action]))
+				{
+					$controller_obj->$action();
+				}
+				else
+				{
+					echo "Method $action not found in $controller class!";
+				}
+			}
+			else
+			{
+				echo "$controller class doesn't exists";
+			}
+		}
+		else
+		{
+			echo 'No route matched!';
+		}
+	}
+
+	public function convertToStudlyCaps($class)
+	{
+		return str_replace('-', '', ucwords($class, '-'));
+	}
+
+	public function convertToCamelCase($action)
+	{
+		return str_replace('-', '', lcfirst($class));
 	}
 }
