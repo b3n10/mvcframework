@@ -10,6 +10,13 @@ class Home extends \Core\Controller {
 	}
 
 	public function indexAction() {
-		View::render('Home/index.php');
+		View::render('Home/index.php', [
+			'username'		=>	'Ben Lleve',
+			'faithgoals'	=>	[
+				'php dev',
+				'family car',
+				'new disciple'
+			]
+		]);
 	}
 }
