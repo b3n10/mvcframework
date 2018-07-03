@@ -102,7 +102,7 @@ class Router
 			if (class_exists($controller))
 			{
 				$controller_obj = new $controller();
-				$action = $this->params['action'];
+				$action = $this->convertToCamelCase($this->params['action']);
 
 				if (is_callable([$controller_obj, $action]))
 				{
@@ -131,6 +131,6 @@ class Router
 
 	public function convertToCamelCase($action)
 	{
-		return str_replace('-', '', lcfirst($class));
+		return str_replace('-', '', lcfirst($action));
 	}
 }
