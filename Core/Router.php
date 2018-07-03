@@ -96,6 +96,8 @@ class Router
 
 	public function dispatch($url)
 	{
+		$url = $this->removeQSVar($url);
+
 		if ($this->match($url))
 		{
 			// include the namespace of the class
@@ -104,7 +106,7 @@ class Router
 			// if class is already required
 			if (class_exists($controller))
 			{
-				$controller_obj = new $controller;
+				$controller_obj = new $controller($this->params);
 				$action = $this->convertToCamelCase($this->params['action']);
 
 				if (is_callable([$controller_obj, $action]))
@@ -135,5 +137,24 @@ class Router
 	public function convertToCamelCase($action)
 	{
 		return str_replace('-', '', lcfirst($action));
+	}
+
+	protected function removeQSVar($url)
+	{
+		if ($url != '')
+		{
+			$parts = explode('&', $url, 2);
+
+			if (!strpos($parts[0], '='))
+			{
+				$url = $parts[0];
+			}
+			else
+			{
+				$url = '';
+			}
+		}
+
+		return $url;
 	}
 }
