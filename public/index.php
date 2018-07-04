@@ -9,6 +9,7 @@ spl_autoload_register(function($class){
 
 	if (is_readable($file)) {
 		require_once $file;
+		
 	}
 });
 
