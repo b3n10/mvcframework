@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Home</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
 	<h1>Welcome</h1>
-	<p>This is home page</p>
 	<h2>Hi, {{ username }}</h2>
 	<h3>Your faithgoals are:</h3>
 	<ul>
@@ -14,5 +11,4 @@
 		<li>{{ fg }}</li>
 		{% endfor %}
 	</ul>
-</body>
-</html>
+{% endblock %}
