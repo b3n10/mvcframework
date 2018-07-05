@@ -20,6 +20,10 @@ Twig_Autoloader::register();
 	});
  */
 
+// override PHP error and exception handlers
+set_error_handler('Core\Error::errorHandler');
+set_exception_handler('Core\Error::exceptionHandler');
+
 $router = new Core\Router();
 
 $router->add('', [

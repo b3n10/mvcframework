@@ -3,6 +3,8 @@
 
 namespace Core;
 
+use Exception;
+
 class Router
 {
 	/**
@@ -115,17 +117,17 @@ class Router
 				}
 				else
 				{
-					echo "Method $action not found in $controller class!";
+					throw new Exception("Method $action not found in $controller class!");
 				}
 			}
 			else
 			{
-				echo "$controller class doesn't exists";
+				throw new Exception("$controller class doesn't exists");
 			}
 		}
 		else
 		{
-			echo 'No route matched!';
+			throw new Exception('No route matched!');
 		}
 	}
 
