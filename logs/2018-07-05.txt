@@ -1,0 +1,41 @@
+[05-Jul-2018 23:12:41 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('favicon.ico')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:12:45 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('dfdf')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:12:46 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('favicon.ico')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:16:07 Asia/Shanghai] Uncaught Exception: "Exception"<br>Message: "No route matched!"<br>Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('hello')
+#1 {main}<br>Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:16:07 Asia/Shanghai] Uncaught Exception: "Exception"<br>Message: "No route matched!"<br>Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('favicon.ico')
+#1 {main}<br>Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:17:00 Asia/Shanghai] Uncaught Exception: "Exception"\nMessage: "No route matched!"\nStack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('hellodf')
+#1 {main}\nThrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:17:01 Asia/Shanghai] Uncaught Exception: "Exception"\nMessage: "No route matched!"\nStack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('favicon.ico')
+#1 {main}\nThrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:20:36 Asia/Shanghai] Uncaught Exception: "Exception"\nMessage: "No route matched!"\nStack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('hellodf')
+#1 {main}\nThrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:20:36 Asia/Shanghai] Uncaught Exception: "Exception"\nMessage: "No route matched!"\nStack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('favicon.ico')
+#1 {main}\nThrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:32:57 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('golf')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:32:57 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('favicon.ico')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:33:08 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('golf')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:33:17 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('posts/')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:33:42 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('posts/')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:34:11 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('postss')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:40:59 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('postssdfd')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:41:11 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('hih')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:42:09 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('test')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:43:20 Asia/Shanghai] Uncaught Exception: "Exception"Message: "No route matched!"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('te')
+#1 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php" on line 130
+[05-Jul-2018 23:43:45 Asia/Shanghai] Uncaught Exception: "Exception"Message: "Method 'next' doesn't exists in 'App\Controllers\Posts'"Stack Trace: #0 /home/ben/sdcard-16gig/workspace/public_html/framework/Core/Router.php(116): Core\Controller->__call('next', Array)
+#1 /home/ben/sdcard-16gig/workspace/public_html/framework/public/index.php(46): Core\Router->dispatch('posts/next')
+#2 {main}Thrown in "/home/ben/sdcard-16gig/workspace/public_html/framework/Core/Controller.php" on line 26

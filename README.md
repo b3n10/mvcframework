@@ -5,9 +5,14 @@
 
 #### Timeline:
 - Start: June 23, 2018
-- End: xxx
+- End: July 5, 2018
 
 #### Reminders:
+##### For error to be logged, make sure it has write permissions:
+```sh
+chmod 777 logs/
+```
+
 ##### For redirect to work:
 - For 500 internal error, make sure to run: sudo a2enmod rewrite
 - Then add these lines on apache2.conf or sites-available/xxx.conf if enabled:
