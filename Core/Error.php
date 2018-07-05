@@ -15,6 +15,14 @@ class Error {
 
 	public static function exceptionHandler($exception_obj) {
 
+		$code = $exception_obj->getCode();
+
+		if ($code !== 404) {
+			$code = 500;
+		}
+
+		http_response_code($code);
+
 		// for development
 		if (Config::SHOW_ERRORS) {
 
@@ -36,7 +44,7 @@ class Error {
 			$msg .= 'Thrown in "' . $exception_obj->getFile() . '" on line ' . $exception_obj->getLine();
 			error_log($msg);
 
-			echo '<h1>Error! Please contact admin for more info.';
+			View::renderTemplate("$code.html");
 
 		}
 	}
