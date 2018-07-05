@@ -12,13 +12,12 @@ class Model {
 
 		if ($db === null) {
 
-			try {
-				$db = new PDO("mysql:host=" . Config::DB_HOST .";dbname=" . Config::DB_NAME . ";charset=utf8",
-					Config::DB_USERNAME, Config::DB_PASSWORD);
+			$db = new PDO("mysql:host=" . Config::DB_HOST .";dbname=" . Config::DB_NAME . ";charset=utf8",
+				Config::DB_USERNAME, Config::DB_PASSWORD);
 
-			} catch (PDOException $e) {
-				die($e->getMessage());
-			}
+			// replace try-catch by throwing an exception if error occurs
+			$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 		}
 
 		return $db;
