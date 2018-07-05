@@ -5,7 +5,7 @@
 
 #### Timeline:
 - Start: June 23, 2018
-- End: xxx
+- End: July 5, 2018
 
 #### Reminders:
 ##### For error to be logged, make sure it has write permissions:
