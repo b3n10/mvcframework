@@ -6,7 +6,10 @@
 <h2>Posts from {{ username }}</h2>
 <ul>
 	{% for post in posts %}
-	<li>{{ post }}</li>
+	<li>
+		<h4>{{ post.title }}</h4>
+		<p>{{ post.content }}</p>
+	</li>
 	{% endfor %}
 </ul>
 {% endblock %}
